@@ -1,48 +1,168 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>주차장 이전 및 변경 안내 (타운센트 주차장 이용)</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>주차장 이전 및 변경 안내</title>
+  <meta name="description" content="주차장 이전 및 변경 안내 (타운센트 주차장 이용)" />
+  <meta property="og:title" content="주차장 이전 및 변경 안내" />
+  <meta property="og:description" content="타운센트 주차장 이용 안내" />
+  <meta property="og:type" content="website" />
   <style>
-    body { font-family: 'Malgun Gothic', sans-serif; margin: 20px; line-height: 1.6; max-width: 900px; margin: auto; }
-    h1, h2 { color: #333; }
-    img { max-width: 100%; height: auto; margin: 10px 0; border: 1px solid #ddd; }
-    .important { color: red; font-weight: bold; }
+    :root{
+      --bg: #0b1220;
+      --paper: rgba(255,255,255,.96);
+      --ink: #111827;
+      --muted:#4b5563;
+      --line: rgba(17,24,39,.12);
+      --accent:#2563eb;
+      --warn:#b91c1c;
+      --shadow: 0 20px 45px rgba(2,6,23,.35);
+      --radius: 18px;
+      --radius2: 14px;
+    }
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg:#eef2ff;
+        --paper:#ffffff;
+        --ink:#0b1220;
+        --line: rgba(2,6,23,.10);
+        --shadow: 0 18px 40px rgba(2,6,23,.12);
+      }
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(1200px 700px at 10% -10%, rgba(37,99,235,.22), transparent 60%),
+        radial-gradient(900px 600px at 100% 0%, rgba(59,130,246,.18), transparent 55%),
+        linear-gradient(180deg, var(--bg), #070b14 65%);
+      min-height:100vh;
+      padding:28px 16px 64px;
+    }
+    main{max-width: 980px; margin: 0 auto;}
+    .sheet{
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .top{
+      padding: 26px 26px 18px;
+      border-bottom: 1px solid var(--line);
+      position: relative;
+    }
+    .top::before{
+      content:"";
+      position:absolute;
+      inset:0 0 auto 0;
+      height: 5px;
+      background: linear-gradient(90deg, rgba(37,99,235,.0), rgba(37,99,235,.9), rgba(37,99,235,.0));
+    }
+    h1{margin: 6px 0 0; font-size: 28px; letter-spacing: -0.02em; line-height: 1.25;}
+    .content{padding: 18px 26px 26px;}
+    .block{
+      padding: 18px 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius2);
+      background: rgba(255,255,255,.70);
+    }
+    .stack{display:grid; gap:14px}
+    .item{margin: 0; font-size: 16px; line-height: 1.65;}
+    .sub{margin: 0 0 0 18px; color: var(--muted); font-size: 15px; line-height: 1.65;}
+    .warn{color: var(--warn); font-weight: 700;}
+    .divider{height: 1px; background: var(--line); margin: 18px 0;}
+    .section-title{margin: 0; font-size: 16px; line-height: 1.4; font-weight: 800; letter-spacing: -0.01em;}
+    .section-title + .divider{margin-top:12px}
+    .imgwrap{margin: 10px 0 0; display:flex; justify-content:center;}
+    img{
+      display:block;
+      max-width:100%;
+      height:auto;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: #f8fafc;
+    }
+    .img-landscape{width: min(920px, 100%);}
+    .img-portrait{width: min(520px, 100%);}
+    @media (max-width: 560px){
+      .top{padding:22px 18px 14px}
+      .content{padding:16px 18px 22px}
+      h1{font-size:22px}
+      .block{padding:16px}
+      .item{font-size:15px}
+      .sub{font-size:14px}
+    }
+    @media print{
+      body{background:#fff; padding:0}
+      .sheet{box-shadow:none; border-radius:0}
+      .top::before{display:none}
+    }
   </style>
 </head>
 <body>
+  <main>
+    <article class="sheet" role="article" aria-label="주차장 안내 공지">
+      <header class="top">
+        <h1>[주차장 이전 및 변경 안내]</h1>
+      </header>
 
-<h1>주차장 이전 및 변경 안내</h1>
-<h2>타운센트 주차장 이용 안내</h2>
+      <div class="content stack">
 
-<ol>
-  <li><strong>변경 장소</strong>: 웅신타워 → 타운센트 (병원 후문 맞은편 오피스텔 - 기계식 주차장)</li>
-  <li><strong>시행 일자</strong>: 2026.2.1.(일) / 웅신타워는 2026.1.31.까지만 이용 가능</li>
-  <li><strong>비용 공제</strong>: 무료</li>
-  <li><strong>이용 시간</strong>: 24시간</li>
-  <li><strong>참고 사항</strong>:
-    <ul>
-      <li>임시 이용 기간: 2026.1.29(목)~31(토)</li>
-      <li>임시이용 기간 출근 시간대 08:00~08:40 까지 총무팀장 + 삼구 주차팀 지원 예정</li>
-    </ul>
-  </li>
-</ol>
+        <section class="block stack" aria-label="주요 안내">
+          <p class="item">1. 변경 장소 : 웅신타워 → 타운센트 (병원 후문 맞은편 오피스텔-기계식 주차장)</p>
+          <p class="item">2. 시행 일자 : 2026.2.1. (일) / 웅신타워는 2026.1.31.까지만 이용 가능</p>
+          <p class="item">3. 비용 공제 : 무료</p>
+          <p class="item">4. 이용 시간 : 24시간</p>
+          <p class="item">5. 참고 사항 : 임시 이용 기간 2026.1.29(목)~31(토)</p>
+          <p class="sub">임시이용 기간 출근 시간대 08:00~08:40 까지 총무팀장 + 삼구 주차팀 지원 예정</p>
 
-<p>문의 사항: 총무팀 1302</p>
+          <div class="divider"></div>
 
-<p class="important">※ 기계식 주차장만 이용 가능 (기계식 외 지면 주차구역은 지정 주차임)</p>
-<p>※ 지하주차장 진입 시 가장 먼저 보이는 기계식 주차장이 1호기 (대형차량)<br>
-   그 맞은 편에 있는 기계식 주차장은 2호기 (승용차 전용)</p>
+          <p class="item">문의 사항 총무팀 1302</p>
 
-<h3>기계식 주차장 사용 방법 (1호기, 2호기 공통)</h3>
-<p>입고 버튼 누르고 트렁크, 사이드미러 등 열렸음 아니오 눌러야 함</p>
+          <p class="item warn">※ 기계식 주차장만 이용 가능 (기계식 외 지면 주차구역은 지정 주차임)</p>
+          <p class="item warn">※ 지하주차장 진입 시 가장 먼저 보이는 기계식 주차장이 1호기 (대형차량) 그 맞은 편에 있는 기계식 주차장은 2호기 (승용차 전용)</p>
+        </section>
 
-<h3>입고불가 차량 리스트</h3>
-<p><img src="image1.png" alt="입고불가 차량 리스트 1"></p>
-<p><img src="image2.jpeg" alt="입고불가 차량 리스트 2"></p>
-<p><img src="image3.jpeg" alt="입고불가 차량 리스트 3"></p>
-<p><img src="image4.jpeg" alt="입고불가 차량 리스트 4"></p>
+        <section class="block stack" aria-label="첨부 안내">
+          <p class="section-title">첨부 : 기계식 주차장 사용방법 안내 (1호기, 2호기 공통 사항)</p>
 
+          <div class="divider"></div>
+
+          <p class="section-title">■ 타운센트 주차장 (병원 후문 맞은편 – 응급실 쪽 방향)</p>
+          <div class="imgwrap">
+            <img class="img-landscape" src="./assets/image1.png" alt="타운센트 주차장 진입 방향 안내 이미지" loading="lazy" decoding="async" />
+          </div>
+
+          <div class="divider"></div>
+
+          <p class="section-title">■ 기계식 주차장 사용 방법 (1호기, 2호기 공통)</p>
+          <p class="item">입고 버튼 누르고 트렁크, 사이드미러 등 열렸음 아니오 눌러야 함</p>
+          <div class="imgwrap">
+            <img class="img-portrait" src="./assets/image2.jpeg" alt="기계식 주차장 조작 패널 안내 이미지" loading="lazy" decoding="async" />
+          </div>
+
+          <div class="divider"></div>
+
+          <p class="section-title">■ 1호기 입고불가 차량리스트</p>
+          <div class="imgwrap">
+            <img class="img-portrait" src="./assets/image3.jpeg" alt="1호기 입고불가 차량리스트 이미지" loading="lazy" decoding="async" />
+          </div>
+
+          <div class="divider"></div>
+
+          <p class="section-title">■ 2호기 입고불가 차량리스트 (승용차 전용)</p>
+          <div class="imgwrap">
+            <img class="img-portrait" src="./assets/image4.jpeg" alt="2호기 입고불가 차량리스트 이미지" loading="lazy" decoding="async" />
+          </div>
+        </section>
+
+      </div>
+    </article>
+  </main>
 </body>
 </html>
